@@ -1,0 +1,43 @@
+import React from 'react';
+
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { ScreenLayout, Logo } from '../components/Share'; 
+
+
+export default function TitleScreen({ navigation }) {
+  return (
+    <ScreenLayout>
+      <View style={styles.content}>
+        
+  
+        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+          <Logo />
+        </TouchableOpacity>
+
+        <Text style={styles.title}>RETURNLY</Text>
+        <Text style={styles.subtitle}>For the Things that You've Lost</Text>
+      </View>
+    </ScreenLayout>
+  );
+}
+
+const styles = StyleSheet.create({
+  content: { 
+    alignItems: 'center', 
+    justifyContent: 'center',
+    borderRadius: 20
+   },
+  title: { 
+    color: 'white', 
+    fontSize: 46, 
+    fontWeight: 'bold', 
+    letterSpacing: 6, 
+    marginTop: 20 
+  },
+  subtitle: { 
+    color: '#9ca3af', 
+    fontSize: 16, 
+    marginTop: 10,
+    opacity: 0.8 
+  },
+});
